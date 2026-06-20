@@ -142,12 +142,11 @@ async def ranking(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 def main():
+    def main():
     if not TOKEN:
         raise RuntimeError("Falta BOT_TOKEN")
-
     if not SHEET_ID:
         raise RuntimeError("Falta SHEET_ID")
-
     if not GOOGLE_CREDENTIALS:
         raise RuntimeError("Falta GOOGLE_CREDENTIALS")
 
@@ -159,7 +158,6 @@ def main():
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, detectar_puntos))
 
     print("Bot iniciado correctamente...")
-
     app.run_polling(drop_pending_updates=True)
 
 if __name__ == "__main__":
