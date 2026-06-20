@@ -140,7 +140,7 @@ async def ranking(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(mensaje)
 
-async def main():
+
 def main():
     if not TOKEN:
         raise RuntimeError("Falta BOT_TOKEN")
