@@ -141,6 +141,7 @@ async def ranking(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(mensaje)
 
 async def main():
+    def main():
     if not TOKEN:
         raise RuntimeError("Falta BOT_TOKEN")
     if not SHEET_ID:
@@ -156,13 +157,7 @@ async def main():
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, detectar_puntos))
 
     print("Bot iniciado correctamente...")
-
-    await app.initialize()
-    await app.start()
-    await app.updater.start_polling()
-
-    while True:
-        await asyncio.sleep(3600)
+    app.run_polling(drop_pending_updates=True)
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
